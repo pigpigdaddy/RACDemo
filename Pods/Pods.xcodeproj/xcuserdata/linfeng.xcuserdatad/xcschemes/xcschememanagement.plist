@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7FF75F9FC18280D3819BB8108D551391</key>
+		<key>119867D925A434648029D82086A5EC69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6A6F589159CC65FD3242395B34B357D</key>
+		<key>29F787E5C25C3A859181548DE157D6D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D0C2B3615F8E4F6C444D92BFADE97393</key>
+		<key>5FF1764BCBAADE2EC0D1F7160ABF1CA8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0E0326008F84B0D7E113767EDFB9BC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
