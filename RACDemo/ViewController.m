@@ -21,12 +21,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    NSInteger len = [self stringLength:^(NSString *str) {
-//        NSLog(@"str %@", @(str.length));
-//    }];
-//    
-//    NSLog(@"len %@", @(len));
-    
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 50)];
     textField.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:textField];
@@ -35,13 +29,31 @@
     label.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:label];
     
-    [textField.rac_textSignal subscribeNext:^(id x) {
-        label.text = textField.text;
-    } error:^(NSError *error) {
-        NSLog(@"error : %@", error);
-    } completed:^{
-        NSLog(@"completed");
+//    [textField.rac_textSignal subscribeNext:^(id x) {
+//        label.text = x;
+//    }];
+    
+//    [[textField.rac_textSignal filter:^BOOL(id value) {
+//        NSString *text = value;
+//        return text.length >= 3;
+//    }] subscribeNext:^(id x) {
+//        label.text = x;
+//    }];
+    
+    
+    [[[textField.rac_textSignal map:^id(NSString *value) {
+        return @(value.length);
+    }] filter:^BOOL(NSNumber *value) {
+        return [value integerValue] > 5;
+    }] subscribeNext:^(NSNumber *x) {
+        label.text = [NSString stringWithFormat:@"%@", x];
     }];
+    
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
